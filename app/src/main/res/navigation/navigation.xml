@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/picturePickerFragment">
+
+    <fragment
+        android:id="@+id/picturePickerFragment"
+        android:name="com.elevenine.unsplashdemoretrofitapp.ui.picturepicker.PicturePickerFragment"
+        android:label="fragment_picture_picker"
+        tools:layout="@layout/fragment_picture_picker" >
+        <action
+            android:id="@+id/action_picturePickerFragment_to_fullscreenPictureFragment"
+            app:destination="@id/fullscreenPictureFragment">
+            <argument
+                android:name="photoId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fullscreenPictureFragment"
+        android:name="com.elevenine.unsplashdemoretrofitapp.ui.fullscreenpicture.FullscreenPictureFragment"
+        android:label="FullscreenPictureFragment" >
+        <argument
+            android:name="photoId"
+            app:argType="string" />
+    </fragment>
+</navigation>
